@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
+ * 解析异步消息处理机制
  * 1.Message
  * Message是在线程之间传递的消息，它可以在内部携带少量的信息，用于在不同线程之间交换数据。
  * 除此之外还可以使用arg1和arg2字段来携带一些整型数据，使用obj字段携带一个Object对象
@@ -24,6 +25,9 @@ import android.widget.TextView;
  * Looper是每个线程中的MessageQuene的管家，调用Looper的loop()方法后，就会进入到一个无限
  * 循环当中，然后当发现MessageQuene中存在一个消息，就会将它取出，并传递到Handler的handleMesage()
  * 方法中。每个线程中也只会有一个Looper对象。
+ *
+ * 使用AsyncTask
+ * AsyncTask背后的实现原理也是基于异步消息处理机制的，只是AsyncTask帮我们做了很好的封装而已.
  *
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
